@@ -1,0 +1,1 @@
+This is an intern project Enterprise calculator in its first version.

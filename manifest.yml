@@ -1,0 +1,23 @@
+---
+applications:
+- name: calculator-api
+  instances: 1
+  memory: 700MB
+  path: \enterprise-calculator.web\target\enterprise-calculator.web-release.jar
+  env:
+    SAP_JWT_TRUST_ACL: "[{\"clientid\" : \"*\", \"identityzone\" : \"*\"}]"
+  services:
+    - my-xsuaa
+    - my-postgresql
+- name: enterprise-calculator
+  routes:
+    - route: enterprise-calculator-I515349.cfapps.sap.hana.ondemand.com
+  path: enterprise-calculator
+  memory: 324MB
+  buildpacks:
+    - nodejs_buildpack
+  env:
+    SAP_JWT_TRUST_ACL: "[{\"clientid\" : \"*\", \"identityzone\" : \"*\"}]"
+    destinations: '[{"name":"app-destination", "url" : "https://calculator-api.cfapps.sap.hana.ondemand.com", "forwardAuthToken": true}]'
+  services:
+    - my-xsuaa

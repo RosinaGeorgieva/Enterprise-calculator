@@ -1,0 +1,7 @@
+CREATE TABLE calculations(
+id BIGSERIAL NOT NULL,
+expression VARCHAR(100) NOT NULL,
+result FLOAT,
+status INTEGER NOT NULL,
+username VARCHAR(100) NOT NULL,
+timestamp TIMESTAMP NOT NULL);

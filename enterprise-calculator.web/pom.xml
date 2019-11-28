@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sap.training</groupId>
+		<artifactId>enterprise-calculator</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<artifactId>enterprise-calculator.web</artifactId>
+	<name>enterprise-calculator.web</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.xs2.security</groupId>
+			<artifactId>security-commons</artifactId>
+			<version>0.22.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.xs2.security</groupId>
+			<artifactId>java-container-security</artifactId>
+			<version>0.22.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.security.nw.sso.linuxx86_64.opt</groupId>
+			<artifactId>sapjwt.linuxx86_64</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.security.nw.sso.ntamd64.opt</groupId>
+			<artifactId>sapjwt.ntamd64</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.security.nw.sso.linuxppc64.opt</groupId>
+			<artifactId>sapjwt.linuxppc64</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.security.nw.sso.darwinintel64.opt</groupId>
+			<artifactId>sapjwt.darwinintel64</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>2.1.9.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.training</groupId>
+			<artifactId>enterprise-calculator.api</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>enterprise-calculator.web</finalName>
+					<classifier>release</classifier>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
